@@ -9,8 +9,9 @@ public class SmojikManager : MonoBehaviour
     private GameObject gobui;
     private GameObject crackers;
     private GameObject barbus;
+
+    [SerializeField]
     private GameObject player;
-    private new GameObject camera;
 
     //The index of the current character
     private int gob = 0;
@@ -24,12 +25,10 @@ public class SmojikManager : MonoBehaviour
         gobui = GameObject.FindGameObjectWithTag("Gobui");
         crackers = GameObject.FindGameObjectWithTag("Crackers");
         barbus = GameObject.FindGameObjectWithTag("Barbus");
-        camera = GameObject.FindGameObjectWithTag("MainCamera");
 
-       //This would save GameObjects between scenes, it has some bugs
-       /* DontDestroyOnLoad(mov);
+       //This saves GameObjects between scenes
+        DontDestroyOnLoad(player);
         DontDestroyOnLoad(this.gameObject);
-        DontDestroyOnLoad(camera);*/
     }
 
     private void Update()
